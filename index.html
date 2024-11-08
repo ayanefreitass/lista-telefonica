@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body class="bg-pink-200 h-screen flex flex-col items-center">
+    <div class="mt-10 text-center text-white font-semibold">
+        <h1 class="text-4xl">Lista Telefonica</h1>
+    </div>
+    
+    <div class="flex flex-col items-center justify-center w-full max-w-4xl mx-auto mt-5">
+        <table class="table-auto border-collapse border border-slate-500 w-full">
+            <thead>
+                <tr>
+                    <th class="border border-slate-600 p-2 bg-pink-300 text-sky-950 font-bold">Nome</th>
+                    <th class="border border-slate-600 p-2 bg-pink-300 text-sky-950 font-bold">Telefone</th>
+                    <th class="border border-slate-600 p-2 bg-pink-300 text-sky-950 font-bold">Cidade</th>
+                    <th class="border border-slate-600 p-2 bg-pink-300 text-sky-950 font-bold">Excluir</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contato in contatos %}
+                <tr>
+                    <td class="border border-slate-600 p-2 text-white" style="background: transparent;">{{contato[["nome"]}}</td>
+                    <td class="border border-slate-600 p-2 text-white" style="background: transparent;">{{contato[["telefone"]}}</td>
+                    <td class="border border-slate-600 p-2 text-white" style="background: transparent;">{{contato[["cidade"]}}</td>
+                    <td class="border border-slate-600 p-2 text-white" style="background: transparent;">{{contato[[nome]}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="flex flex-col justify-center items-center py-10">
+            
+            <button type="submit" class="bg-pink-300 text-slate-100 font-semibold py-2 px-4 rounded-md shadow-xl shadow-sky-700/50">
+                <a href="/lista">Adicionar Contato</a>
+            </button>
+        </div>
+    </div>
+</body>
+</html>
